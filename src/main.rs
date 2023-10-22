@@ -62,10 +62,7 @@ fn change(arg: &mut String) {
 }
 
 fn eat(arg: String) -> bool {
-    if arg.starts_with("b") && arg.contains("a") {
-        return true;
-    }
-    return false;
+    arg.starts_with("b") && arg.contains("a")
 }
 
 fn bedazzle(arg: &mut String) {
