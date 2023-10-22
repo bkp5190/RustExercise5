@@ -21,6 +21,13 @@ fn main() {
             arg.push_str("s");
         }
     }
+
+    fn eat(arg: String) -> bool {
+        if arg.starts_with("b") && arg.contains("a") {
+            return true;
+        }
+        return false;
+    }
     // 1. Write a function `inspect` that takes a reference to a String, returns nothing, but
     // prints whether the contents of the String is plural or singular. Then uncomment and run this
     // code with `cargo run apple` and `cargo run apples'.  Hint: use `.ends_with("s")` on the
@@ -40,11 +47,11 @@ fn main() {
     // Hint 1: use `.starts_with("b")` and `.contains("a")`
     // Hint 2: `&&` is the boolean "AND" operator
     //
-    //if eat(arg) {
-    //    println!("Might be bananas");
-    //} else {
-    //    println!("Not bananas");
-    //}
+    if eat(arg) {
+        println!("Might be bananas");
+    } else {
+        println!("Not bananas");
+    }
 
     // Try running this program with "boat", "banana", and "grapes" as the arguments :-)
 
