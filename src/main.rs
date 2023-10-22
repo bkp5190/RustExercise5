@@ -8,31 +8,6 @@ fn main() {
         println!("Please supply an argument to this program.");
         std::process::exit(-1);
     });
-    fn inspect(arg: &String) {
-        if arg.ends_with("s") {
-            println!("plural");
-        } else {
-            println!("singular");
-        }
-    }
-
-    fn change(arg: &mut String) {
-        if !arg.ends_with("s") {
-            arg.push_str("s");
-        }
-    }
-
-    fn eat(arg: String) -> bool {
-        if arg.starts_with("b") && arg.contains("a") {
-            return true;
-        }
-        return false;
-    }
-
-    fn bedazzle(arg: &mut String) {
-        arg.clear();
-        arg.push_str("sparkly");
-    }
     // 1. Write a function `inspect` that takes a reference to a String, returns nothing, but
     // prints whether the contents of the String is plural or singular. Then uncomment and run this
     // code with `cargo run apple` and `cargo run apples'.  Hint: use `.ends_with("s")` on the
@@ -71,4 +46,29 @@ fn main() {
     println!("This material is just `{}`.", material);
     bedazzle(&mut material);
     println!("Wow! Now the material is `{}`!", material);
+}
+fn inspect(arg: &String) {
+    if arg.ends_with("s") {
+        println!("{} is plural", arg);
+    } else {
+        println!("{} is singular", arg);
+    }
+}
+
+fn change(arg: &mut String) {
+    if !arg.ends_with("s") {
+        arg.push_str("s");
+    }
+}
+
+fn eat(arg: String) -> bool {
+    if arg.starts_with("b") && arg.contains("a") {
+        return true;
+    }
+    return false;
+}
+
+fn bedazzle(arg: &mut String) {
+    arg.clear();
+    arg.push_str("sparkly");
 }
