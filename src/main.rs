@@ -28,6 +28,11 @@ fn main() {
         }
         return false;
     }
+
+    fn bedazzle(arg: &mut String) {
+        arg.clear();
+        arg.push_str("sparkly");
+    }
     // 1. Write a function `inspect` that takes a reference to a String, returns nothing, but
     // prints whether the contents of the String is plural or singular. Then uncomment and run this
     // code with `cargo run apple` and `cargo run apples'.  Hint: use `.ends_with("s")` on the
@@ -62,8 +67,8 @@ fn main() {
     // Hint: You will need to dereference the mutable reference in order to assign it a
     // new value.
     //
-    // let mut material = "mud".to_string();
-    // println!("This material is just `{}`.", material);
-    // bedazzle(&mut material);
-    // println!("Wow! Now the material is `{}`!", material);
+    let mut material = "mud".to_string();
+    println!("This material is just `{}`.", material);
+    bedazzle(&mut material);
+    println!("Wow! Now the material is `{}`!", material);
 }
